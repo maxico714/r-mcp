@@ -1,0 +1,13 @@
+rules:
+  - name: gate-file-writes
+    match:
+      method: tools/call
+      tool_name: write_file
+    action: confirm
+    prompt: "Allow write_file? (y/N) "
+  - name: deny-shell
+    match:
+      method: tools/call
+      tool_name: "shell|exec|run"
+    action: deny
+default: allow
