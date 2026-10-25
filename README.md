@@ -2,14 +2,14 @@
 
 **Offline MCP stdio proxy: redacted capture, confirm-gate, replay, and per-tool token estimates.**
 
-> Status: **v0.1.0 built and locally verified (2026-10-25).** Not published. Public push (G2) and registry publish (G3) are owner-gated and have not happened. The PyPI name `r-mcp` returned 404 on 2026-10-25.
+> Status: **v0.1.0 built and verified (2026-10-25).** Source published on GitHub; registry publish (G3) remains owner-gated and has not happened. The PyPI name `r-mcp` returned 404 on 2026-10-25.
 
 MCP servers talk newline-delimited JSON-RPC over stdio. Clients swallow that traffic, so a wrong argument, a silent failure, or a surprising cost is hard to see. `r-mcp` sits between a client and a server as a transparent proxy: it records both directions with secrets redacted, can pause and ask before a dangerous tool call runs, replays a captured request, and reports rough per-tool token estimates. Everything is local; there is no account, no telemetry, and no auth persistence.
 
 ## Install (from source)
 
 ```bash
-git clone <repository-url>          # not public yet
+git clone https://github.com/maxico714/r-mcp.git
 cd r-mcp
 python -m venv .venv
 # Windows: .venv\Scripts\activate

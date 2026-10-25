@@ -11,3 +11,7 @@ build/
 *.jsonl
 !examples/*.jsonl
 !tests/fixtures/*.jsonl
+
+# agent workspace (private)
+.agent/
+AGENTS.md
