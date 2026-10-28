@@ -101,6 +101,10 @@ def read_capture(path: Path) -> list[dict[str, Any]]:
                     raise ValueError(f"{path}:{line_no}: invalid JSON: {err}") from err
                 if not isinstance(entry, dict):
                     raise ValueError(f"{path}:{line_no}: capture entry must be an object")
+                if "est_tokens" in entry:
+                    est_tokens = entry["est_tokens"]
+                    if isinstance(est_tokens, bool) or not isinstance(est_tokens, int):
+                        raise ValueError(f"{path}:{line_no}: est_tokens must be an integer")
                 entries.append(entry)
     except OSError as err:
         raise ValueError(f"cannot read capture file {path}: {err}") from err

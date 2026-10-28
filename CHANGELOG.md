@@ -13,8 +13,13 @@ All notable changes to this project are documented here. Format: Keep a Changelo
 - Replay of one captured request by JSON-RPC id or 1-based request index.
 - Per-tool call counts and labelled token estimates (`report`, capture summary).
 - `rules validate`, `doctor`, `--dry-run`, and bounded frame size (`--max-frame-bytes`).
-- 68 tests across unit, integration, security and adversarial tiers.
+- 71 tests across unit, integration, security and adversarial tiers.
 - CI workflow for Ubuntu and Windows, Python 3.10–3.13 (added; not yet executed because the repository has no remote).
+
+### Fixed
+
+- `replay` no longer counts client responses (server-initiated requests) as replayable requests.
+- A capture with a non-integer `est_tokens` value now exits 2 with a clear error instead of a traceback.
 
 ### Security
 

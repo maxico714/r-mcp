@@ -119,11 +119,11 @@ Redaction is conservative heuristics, not a guarantee. A secret that appears in 
 
 | Check | Result |
 |---|---|
-| `pytest -q` | 68 passed on Python 3.12.10 and 3.14.5 |
+| `pytest -q` | 71 passed on Python 3.12.10 and 3.14.5 |
 | `ruff check .`, `ruff format --check .` | clean |
 | `mypy src` (strict) | clean |
 | Mutation check | disabling the entropy heuristic made the redaction security test fail; restored and green |
-| L4 clean environment | fresh copy + new venv + `pip install`, 68 tests passed; README quickstart exited 0 and wrote a 7-line capture |
+| L4 clean environment | fresh copy + new venv + `pip install`, 71 tests passed; README quickstart exited 0 and wrote a 7-line capture |
 | Packaging | wheel and sdist build; `twine check` passes |
 | Secrets scan | `detect-secrets`: 0 findings on the project files (two fake test fixtures are inline-allowlisted) |
 | PyPI name | `r-mcp` and `r_mcp` both returned 404 |

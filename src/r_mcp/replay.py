@@ -26,7 +26,9 @@ def select_request(
     requests = [
         entry
         for entry in entries
-        if entry.get("direction") == "c2s" and isinstance(entry.get("payload"), dict)
+        if entry.get("direction") == "c2s"
+        and isinstance(entry.get("payload"), dict)
+        and isinstance(entry["payload"].get("method"), str)
     ]
     if not requests:
         raise ValueError("capture contains no client requests to replay")

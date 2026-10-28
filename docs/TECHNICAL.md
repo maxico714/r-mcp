@@ -130,7 +130,7 @@ No benchmark was run in v0.1. Per-frame work is one JSON parse for rules/capture
 | L1 | 4 unit modules: framing, redaction, rules, attribution |
 | L2 | Real subprocess mock server through the proxy; capture, confirm allow/deny, replay, report |
 | L3 | Same fixture server as an end-to-end stdio process; no vendor client |
-| L4 | Fresh copy + new venv + install + 68 tests + README quickstart |
+| L4 | Fresh copy + new venv + install + 71 tests + README quickstart |
 | L5 | Malformed, non-object, invalid UTF-8, incomplete, oversize, deep nesting, spawn failure, timeout, redaction audit |
 
 ## Packaging

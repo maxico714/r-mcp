@@ -259,6 +259,17 @@ def test_capture_write_failure_exits_two(tmp_path: Path) -> None:
     assert b"cannot write capture file" in result.stderr
 
 
+def test_report_rejects_malformed_estimate(tmp_path: Path) -> None:
+    capture = tmp_path / "capture.jsonl"
+    capture.write_text(
+        '{"direction":"c2s","method":"tools/call","tool_name":"echo","est_tokens":"oops"}\n',
+        encoding="utf-8",
+    )
+    result = run_cli(["report", str(capture)])
+    assert result.returncode == 2
+    assert b"est_tokens must be an integer" in result.stderr
+
+
 def test_unicode_tool_arguments_round_trip(tmp_path: Path) -> None:
     capture = tmp_path / "capture.jsonl"
     text = "नमस्ते \u2014 файл"

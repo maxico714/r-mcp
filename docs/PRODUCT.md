@@ -59,7 +59,7 @@ Offline stdio MCP proxy with capture, confirm-gate, forge-replay, and per-tool t
 
 | Criterion | Measure | Status 2026-10-25 |
 |---|---|---|
-| L1 units | JSON-RPC framing, redaction engine, rule matcher unit tests green | PASS (68 total tests) |
+| L1 units | JSON-RPC framing, redaction engine, rule matcher unit tests green | PASS (71 total tests) |
 | L2 integration | Mock MCP server over real stdio → proxy captures all frames; confirm-gate pauses; replay reproduces | PASS |
 | L3 e2e | Local stdio server behind proxy → tool call gated, captured, replayed | PASS with the fixture server; no vendor client tested |
 | L4 clean env | Fresh copy + new venv + install + README quickstart | PASS |

@@ -31,7 +31,7 @@ Demand rating remains 4/5 from the original research; no new quantitative eviden
 ## Host feasibility: VERIFIED
 
 - Python 3.12.10 and 3.14.5 on this host; no Docker, no network, no credentials needed for tests.
-- Local stdio fixture server; 68 tests pass.
+- Local stdio fixture server; 71 tests pass.
 - Runtime dependency PyYAML 6.0.2 (MIT), verified in a clean venv.
 - The official MCP Python SDK is not installed; tests use the documented framing directly, not SDK types.
 
@@ -58,9 +58,9 @@ Most likely failure: mcpsnoop ships a confirm-gate and wins on distribution befo
 
 ## v0.1 implementation evidence
 
-- 68 tests pass (unit, integration, security, adversarial) on Python 3.12.10 and 3.14.5.
+- 71 tests pass (unit, integration, security, adversarial) on Python 3.12.10 and 3.14.5.
 - `ruff check`, `ruff format --check`, strict `mypy` clean.
 - Mutation check: disabling the entropy heuristic fails the redaction security test; restoring makes it pass.
-- L4: fresh copy, clean venv, `pip install`, 68 tests, README quickstart exit 0 with a 7-line capture.
+- L4: fresh copy, clean venv, `pip install`, 71 tests, README quickstart exit 0 with a 7-line capture.
 - Wheel and sdist build; `twine check` passes; `detect-secrets` reports 0 findings; PyPI returns 404 for `r-mcp`.
 - No push, release, account, spend or external communication occurred.
